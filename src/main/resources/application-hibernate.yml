@@ -1,0 +1,10 @@
+spring:
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        default_schema: public
+        cache:
+          region.factory_class: org.hibernate.cache.jcache.JCacheRegionFactory
+          use_second_level_cache: true
+          use_query_cache: true

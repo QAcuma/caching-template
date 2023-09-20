@@ -1,0 +1,8 @@
+singleServerConfig:
+  address: "redis://${REDIS_HOST:-127.0.0.1}:${REDIS_PORT:-6350}"
+  password: "${REDIS_PASSWORD:-qwerty}"
+  timeout: 200
+  keepAlive: true
+  retryAttempts: 3
+  retryInterval: 50
+  pingConnectionInterval: 10000

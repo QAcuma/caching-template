@@ -1,0 +1,28 @@
+redisson:
+  config: redisson/redisson.yml
+
+spring:
+  jpa:
+    properties:
+      hibernate:
+        cache:
+          use_second_level_cache: true
+          use_query_cache: true
+          default_cache_concurrency_strategy: READ_WRITE
+          region.factory_class: org.redisson.hibernate.RedissonRegionFactory
+          region_prefix: hibernate
+          redisson:
+            config: redisson/redisson.yml
+            fallback: true
+            entity:
+              expiration:
+                time_to_live: 7200000
+                max_idle_time: 1800000
+            collection:
+              expiration:
+                time_to_live: 7200000
+                max_idle_time: 1800000
+            query:
+              expiration:
+                time_to_live: 7200000
+                max_idle_time: 1800000
